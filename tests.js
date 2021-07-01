@@ -5,7 +5,7 @@ const img = "https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg"
 export default [
   [
     "navbar",
-    (params) => view(params),
+    view,
     [
       [
         {},
