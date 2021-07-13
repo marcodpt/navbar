@@ -33,9 +33,6 @@ export default (e, params) => {
       }) : null
     ])
   , params, (state, url) => {
-    console.log('Here: ')
-    console.log(url)
-    console.log(getLabel(state.items, url))
     return ({
       ...state,
       label: getLabel(state.items, url)
