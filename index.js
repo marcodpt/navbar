@@ -1,7 +1,6 @@
 import view from './views/bootstrap5.js'
-import {
-  component
-} from 'https://cdn.jsdelivr.net/gh/marcodpt/component/index.js'
+import component from 
+  'https://cdn.jsdelivr.net/gh/marcodpt/component@0.0.1/index.js'
 
 const getLabel = (items, url, path) => {
   var label = ''
@@ -21,21 +20,19 @@ const getLabel = (items, url, path) => {
 }
 
 export default (e, params) => {
-  return component(e, (h, text) => S => 
-    h('div', {}, [
-      view(h, text)(S),
-      S.fixed ? view(h, text)({
-        whiteText: S.whiteText,
-        type: S.type,
-        image: S.image,
-        title: S.title,
-        expand: 'xs'
-      }) : null
-    ])
-  , params, (state, url) => {
+  const c = component(e, view, params, (state, url) => {
     return ({
       ...state,
       label: getLabel(state.items, url)
     })
   })
+  setTimeout(() => {
+    const nav = e.querySelector('nav')
+    if (nav.classList.contains('fixed-top')) {
+      document.body.style['padding-top'] = nav.offsetHeight+'px'
+    } else {
+      document.body.style['padding-top'] = '0px'
+    }
+  }, 50)
+  return c
 }

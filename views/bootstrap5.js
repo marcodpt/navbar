@@ -1,4 +1,4 @@
-import {link} from 'https://cdn.jsdelivr.net/gh/marcodpt/views/index.js'
+import {link} from 'https://cdn.jsdelivr.net/gh/marcodpt/views@0.0.1/index.js'
 
 export default (h, text) => ({
   whiteText,

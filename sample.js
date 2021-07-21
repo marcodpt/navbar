@@ -4,10 +4,9 @@ import dark from './samples/dark.js'
 
 export default {
   title: 'Navbar component',
-  gh: 'https://github.com/marcodpt/navbar',
   samples: {
-    light,
-    dark
+    dark,
+    light
   },
   comp: navbar,
   updates: {

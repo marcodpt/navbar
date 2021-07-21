@@ -66,6 +66,10 @@ export default {
       icon: 'user',
       title: 'John',
       href: '#/user/john'
+    }, {
+      icon: '@github',
+      title: 'Fork me on GitHub',
+      href: 'https://github.com/marcodpt/navbar'
     }
   ]
 }
