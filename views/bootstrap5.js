@@ -7,7 +7,6 @@ export default (h, text) => ({
   type,
   home,
   image,
-  imageHeight,
   title,
   label,
   items
@@ -33,7 +32,7 @@ export default (h, text) => ({
           src: image,
           alt: title,
           title: title,
-          height: imageHeight,
+          height: 0
         })
       ]),
       image || !title ? null : link({

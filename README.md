@@ -13,7 +13,6 @@ it with your background choice
  - string `type`: primary, secondary, light, dark, etc
  - string `home`: url of home
  - string `image`: url of image
- - string|number `imageHeight`: height of the image
  - string `title`: Title of the navbar
  - array of objects `items` with navbar links, properties:
    - string `icon`

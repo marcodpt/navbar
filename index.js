@@ -28,6 +28,17 @@ export default (e, params) => {
   })
   setTimeout(() => {
     const nav = e.querySelector('nav')
+    const brand = nav.querySelector('.navbar-brand')
+    const img = brand ? brand.querySelector('img') : null
+
+    if (brand && img) {
+      const cs = window.getComputedStyle(brand)
+      const height = brand.clientHeight
+        - (parseFloat(cs.getPropertyValue('padding-top')) || 0)
+        - (parseFloat(cs.getPropertyValue('padding-bottom')) || 0)
+        - 4
+      img.style.height = height+'px'
+    }
     if (nav.classList.contains('fixed-top')) {
       document.body.style['padding-top'] = nav.offsetHeight+'px'
     } else {
