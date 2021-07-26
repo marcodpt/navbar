@@ -146,7 +146,7 @@ export default [
                 src="${img}"
                 alt="With image"
                 title="With image"
-                height="24"
+                height="0"
               /></a>
               <span class="navbar-text">home</span>
               <button
@@ -197,7 +197,7 @@ export default [
                 src="${img}"
                 alt="With image and href"
                 title="With image and href"
-                height="24"
+                height="0"
               /></a>
               <span class="navbar-text">home</span>
               <button
