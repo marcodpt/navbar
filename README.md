@@ -1,9 +1,9 @@
 # navbar
-> A navbar [component](https://github.com/marcodpt/component/)
+> A navbar [element](https://github.com/marcodpt/element/)
 
-[Live demo](https://marcodpt.github.io/component/?url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fmarcodpt%2Fnavbar%2Fsample.js)
+[Live demo](https://marcodpt.github.io/element/?url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fmarcodpt%2Fnavbar%2Fsample.js)
 
-[Tests](https://marcodpt.github.io/component/tests.html?url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fmarcodpt%2Fnavbar%2Ftests.js)
+[Tests](https://marcodpt.github.io/element/tests.html?url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fmarcodpt%2Fnavbar%2Ftests.js)
 
 ## Params
  - boolean `whiteText`: whenever the text should be white or black, configure
@@ -19,6 +19,5 @@ it with your background choice
    - string `title`
    - string `url`
    - array `items`: recursive
-
-## Update
- - string `url`: The current url of the page for setup the active route
+ - callback `update`(string `url`): The current url of the page for setup the
+active route

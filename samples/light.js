@@ -3,11 +3,11 @@ export default {
   home: '#',
   items: [
     {
-      icon: 'user',
+      icon: 'fas fa-user',
       title: 'John',
       href: '#/user/john'
     }, {
-      icon: '@github',
+      icon: 'fab fa-github',
       title: 'Fork me on GitHub',
       href: 'https://github.com/marcodpt/navbar'
     }

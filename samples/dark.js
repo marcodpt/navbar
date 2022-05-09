@@ -7,67 +7,67 @@ export default {
   home: '#',
   items: [
     {
-      icon: 'paw',
+      icon: 'fas fa-paw',
       title: 'Animals',
       items: [
         {
-          icon: 'hippo',
+          icon: 'fas fa-hippo',
           title: 'Hippo',
           href: '#/animals/hippo'
         }, {
-          icon: 'dog',
+          icon: 'fas fa-dog',
           title: 'Dog',
           href: '#/animals/dog'
         }, {
-          icon: 'horse',
+          icon: 'fas fa-horse',
           title: 'Horse',
           href: '#/animals/horse'
         }, {
-          icon: 'fish',
+          icon: 'fas fa-fish',
           title: 'Fish',
           href: '#/animals/fish'
         }, {
-          icon: 'cat',
+          icon: 'fas fa-cat',
           title: 'Cat',
           href: '#/animals/cat'
         }
       ]
     }, {
-      icon: 'dumbbell',
+      icon: 'fas fa-dumbbell',
       title: 'Sports',
       items: [
         {
-          icon: 'volleyball-ball',
+          icon: 'fas fa-volleyball-ball',
           title: 'Volleyball',
           href: '#/sports/volleyball'
         }, {
-          icon: 'running',
+          icon: 'fas fa-running',
           title: 'Running',
           href: '#/sports/running'
         }, {
-          icon: 'futbol',
+          icon: 'fas fa-futbol',
           title: 'Futbal',
           href: '#/sports/futbol'
         }, {
-          icon: 'basketball-ball',
+          icon: 'fas fa-basketball-ball',
           title: 'Basketball',
           href: '#/sports/basketball'
         }, {
-          icon: 'swimmer',
+          icon: 'fas fa-swimmer',
           title: 'Swim',
           href: '#/sports/swim'
         }, {
-          icon: 'biking',
+          icon: 'fas fa-biking',
           title: 'Cycling',
           href: '#/sports/cycling'
         }
       ]
     }, {
-      icon: 'user',
+      icon: 'fas fa-user',
       title: 'John',
       href: '#/user/john'
     }, {
-      icon: '@github',
+      icon: 'fab fa-github',
       title: 'Fork me on GitHub',
       href: 'https://github.com/marcodpt/navbar'
     }

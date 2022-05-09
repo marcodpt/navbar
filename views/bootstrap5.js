@@ -1,6 +1,6 @@
-import {link} from 'https://cdn.jsdelivr.net/gh/marcodpt/views@0.0.1/index.js'
+import {html} from '../dependencies.js'
 
-export default (h, text) => ({
+export default ({
   whiteText,
   fixed,
   expand,
@@ -10,8 +10,10 @@ export default (h, text) => ({
   title,
   label,
   items
-}) =>
-  h('nav', {
+}) => html(({
+  nav, div, a, span, button, ul, li, i, img
+}) => 
+  nav({
     class: [
       'navbar',
       fixed ? 'fixed-'+fixed : '',
@@ -21,71 +23,98 @@ export default (h, text) => ({
       'bg-'+(type || 'light')
     ]
   }, [
-    h('div', {
+    div({
       class: 'container-fluid'
     }, [
-      !image ? null : h('a', {
+      !image ? null : a({
         class: 'navbar-brand',
         href: home
       }, [
-        h('img', {
+        img({
           src: image,
           alt: title,
           title: title,
           height: 0
         })
       ]),
-      image || !title ? null : link({
+      image || !title ? null : a({
         title: title,
         href: home,
-        cls: 'navbar-brand'
-      }),
-      !label ? null : link({
-        title: label,
-        cls: 'navbar-text'
-      }),
-      h('button', {
+        class: 'navbar-brand'
+      }, title),
+      span({
+        class: 'navbar-text',
+        dataCtx: 'label'
+      }, label),
+      button({
         class: 'navbar-toggler',
-        'data-bs-toggle': 'collapse',
-        'data-bs-target': '.navbar-collapse'
+        dataBsToggle: 'collapse',
+        dataBsTarget: '.navbar-collapse'
       }, [
-        h('span', {
+        span({
           class: 'navbar-toggler-icon'
         })
       ]),
-      h('div', {
+      div({
         class: 'collapse navbar-collapse'
       }, [
-        h('ul', {
+        ul({
           class: 'navbar-nav ms-auto'
-        }, (items || []).map(item =>
-          item.items ? !item.items.length ? null : h('li', {
+        }, (items || []).map(({
+          icon,
+          title,
+          ...item
+        }) =>
+          item.items ? !item.items.length ? null : li({
             class: 'nav-item dropdown'
           }, [
-            link({
-              ...item,
-              dropdown: true,
-              cls: 'nav-link'
-            }),
-            h('ul', {
+            a({
+              class: 'nav-link dropdown-toggle',
+              dataBsToggle: 'dropdown',
+              ...item
+            }, [
+              icon ? i({
+                class: icon
+              }) : null,
+              icon && title ? ' ' : null,
+              title
+            ]),
+            ul({
               class: 'dropdown-menu'
-            }, item.items.map(function (item) {
-              return h('li', {}, [
-                link({
-                  ...item,
-                  cls: 'dropdown-item'
-                })
+            }, item.items.map(({
+              icon,
+              title,
+              ...item
+            }) => 
+              li([
+                a({
+                  class: 'dropdown-item',
+                  ...item
+                }, [
+                  icon ? i({
+                    class: icon
+                  }) : null,
+                  icon && title ? ' ' : null,
+                  title
+                ])
               ])
-            }))
-          ]) : h('li', {
+            ))
+          ]) : li({
             class: 'nav-item'
           }, [
-            link({
+            a({
               ...item,
-              cls: 'nav-link'
-            })
+              class: 'nav-link'
+            }, [
+              icon ? i({
+                class: icon
+              }) : null,
+              icon && title ? ' ' : null,
+              title
+            ])
           ])
         ))
       ])
     ])
   ])
+)

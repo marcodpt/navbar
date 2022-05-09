@@ -1,6 +1,4 @@
 import view from './views/bootstrap5.js'
-import component from 
-  'https://cdn.jsdelivr.net/gh/marcodpt/component@0.0.1/index.js'
 
 const getLabel = (items, url, path) => {
   var label = ''
@@ -19,31 +17,40 @@ const getLabel = (items, url, path) => {
   return label
 }
 
-export default (e, params) => {
-  const c = component(e, view, params, (state, url) => {
-    return ({
-      ...state,
-      label: getLabel(state.items, url)
-    })
+export default ({
+  update,
+  items,
+  ...params
+}) => {
+  const e = view({
+    items,
+    ...params
   })
-  setTimeout(() => {
-    const nav = e.querySelector('nav')
-    const brand = nav.querySelector('.navbar-brand')
-    const img = brand ? brand.querySelector('img') : null
 
-    if (brand && img) {
-      const cs = window.getComputedStyle(brand)
-      const height = brand.clientHeight
+  const x = e.querySelector(`[data-ctx="label"]`)
+  if (x) {
+    update(url => {
+      x.textContent = getLabel(items, url)
+    })
+  }
+
+  setTimeout(() => {
+    const img = e.querySelector('img')
+    if (img) {
+      const p = img.parentNode
+      const cs = window.getComputedStyle(p)
+      const height = p.clientHeight
         - (parseFloat(cs.getPropertyValue('padding-top')) || 0)
         - (parseFloat(cs.getPropertyValue('padding-bottom')) || 0)
         - 4
       img.style.height = height+'px'
     }
-    if (nav.classList.contains('fixed-top')) {
-      document.body.style['padding-top'] = nav.offsetHeight+'px'
+    if (e.classList.contains('fixed-top')) {
+      document.body.style['padding-top'] = e.offsetHeight+'px'
     } else {
       document.body.style['padding-top'] = '0px'
     }
   }, 50)
-  return c
+
+  return e
 }
