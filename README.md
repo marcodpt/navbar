@@ -1,9 +1,9 @@
 # navbar
-> A navbar [element](https://github.com/marcodpt/element/)
+> A navbar `DOM` element
 
-[Live demo](https://marcodpt.github.io/element/?url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fmarcodpt%2Fnavbar%2Fsample.js)
+[Live demo](https://marcodpt.github.io/h/?url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fmarcodpt%2Fnavbar%2Fsamples.js)
 
-[Tests](https://marcodpt.github.io/element/tests.html?url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fmarcodpt%2Fnavbar%2Ftests.js)
+[Tests](https://marcodpt.github.io/h/tests.html?url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fmarcodpt%2Fnavbar%2Ftests.js)
 
 ## Params
  - boolean `whiteText`: whenever the text should be white or black, configure
